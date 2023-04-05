@@ -1,13 +1,3 @@
-CREATE TABLE IF NOT EXISTS Client(
-    id serial,
-    nom text,
-    prenom text,
-    email text,
-    id_geo integer,
-    CONSTRAINT pk_client PRIMARY KEY (id),
-    CONSTRAINT hk_client_geo FOREIGN KEY (id_geo) REFERENCES Region_geo(id)
-);
-
 CREATE TABLE IF NOT EXISTS Liquid(
     id serial,
     ispotable BOOLEAN,
@@ -19,6 +9,16 @@ CREATE TABLE IF NOT EXISTS Region_geo(
     id serial,
     nom text,
     CONSTRAINT pk_region_geo PRIMARY KEY (id)
+);
+
+CREATE TABLE IF NOT EXISTS Client(
+    id serial,
+    nom text,
+    prenom text,
+    email text,
+    id_geo integer,
+    CONSTRAINT pk_client PRIMARY KEY (id),
+    CONSTRAINT hk_client_geo FOREIGN KEY (id_geo) REFERENCES Region_geo(id)
 );
 
 CREATE TABLE IF NOT EXISTS Fournisseur(
@@ -150,7 +150,8 @@ CREATE TABLE IF NOT EXISTS Geo_sub_liquide(
     id_liquide integer NOT NULL,
     CONSTRAINT fk_geo_sub_liquide__l FOREIGN KEY (id_liquide) REFERENCES Liquid(id),
     CONSTRAINT fk_geo_sub_liquide__s FOREIGN KEY (id_sub) REFERENCES Subvention(id),
-    CONSTRAINT fk_geo_sub_liquide__r FOREIGN KEY (id_region_concerne) REFERENCES Region_geo(id)
+    CONSTRAINT fk_geo_sub_liquide__r FOREIGN KEY (id_region_concerne) REFERENCES Region_geo(id),
+    CONSTRAINT pk_geo_sub_liquide PRIMARY KEY (id_sub)
 );
 
 CREATE TABLE IF NOT EXISTS Client_geo(
