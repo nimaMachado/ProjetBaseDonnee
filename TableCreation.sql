@@ -148,27 +148,50 @@ CREATE TABLE IF NOT EXISTS Geo_sub_liquide(
     id_region_concerne integer NOT NULL,
     id_sub integer NOT NULL,
     id_liquide integer NOT NULL,
-    CONSTRAINT hk_geo_sub_liquide__l FOREIGN KEY (id_liquide) REFERENCES Liquid(id),
-    CONSTRAINT hk_geo_sub_liquide__s FOREIGN KEY (id_sub) REFERENCES Subvention(id),
-    CONSTRAINT hk_geo_sub_liquide__r FOREIGN KEY (id_region_concerne) REFERENCES Region_geo(id)
+    CONSTRAINT fk_geo_sub_liquide__l FOREIGN KEY (id_liquide) REFERENCES Liquid(id),
+    CONSTRAINT fk_geo_sub_liquide__s FOREIGN KEY (id_sub) REFERENCES Subvention(id),
+    CONSTRAINT fk_geo_sub_liquide__r FOREIGN KEY (id_region_concerne) REFERENCES Region_geo(id)
 );
 
 CREATE TABLE IF NOT EXISTS Client_geo(
     id_client integer NOT NULL,
     id_region_concerne integer NOT NULL,
-    CONSTRAINT hk_client_geo__c FOREIGN KEY (id_client) REFERENCES Client(id),
-    CONSTRAINT hk_client_geo__r FOREIGN KEY (id_region_concerne) REFERENCES Region_geo(id)
+    CONSTRAINT fk_client_geo__c FOREIGN KEY (id_client) REFERENCES Client(id),
+    CONSTRAINT fk_client_geo__r FOREIGN KEY (id_region_concerne) REFERENCES Region_geo(id)
 );
 
 CREATE TABLE IF NOT EXISTS Geo_geo(
     id_geo integer NOT NULL,
     id_geo_macro integer NOT NULL,
-    CONSTRAINT hk_geo_geo__g FOREIGN KEY (id_geo) REFERENCES Region_geo(id),
-    CONSTRAINT hk_geo_geo__mg FOREIGN KEY (id_geo_macro) REFERENCES Region_geo(id)
+    CONSTRAINT fk_geo_geo__g FOREIGN KEY (id_geo) REFERENCES Region_geo(id),
+    CONSTRAINT fk_geo_geo__mg FOREIGN KEY (id_geo_macro) REFERENCES Region_geo(id)
 );
 
+CREATE TABLE IF NOT EXISTS Client_liquide(
+    id_liquide integer NOT NULL,
+    id_client integer NOT NULL,
+    CONSTRAINT fk_client_liquide__l FOREIGN KEY (id_liquide) REFERENCES Liquid(id),
+    CONSTRAINT fk_client_liquide__c FOREIGN KEY (id_client) REFERENCES Client(id)
+);
 
+CREATE TABLE IF NOT EXISTS Liquide_geo(
+    id_liquide integer NOT NULL,
+    id_geo integer NOT NULL,
+    CONSTRAINT fk_liquide_geo__l FOREIGN KEY (id_liquide) REFERENCES Liquid(id),
+    CONSTRAINT fk_liquide_geo__g FOREIGN KEY (id_geo) REFERENCES Region_geo(id)
+);
 
+CREATE TABLE IF NOT EXISTS Fournisseur_geo(
+    id_fournisseur integer NOT NULL,
+    id_geo integer NOT NULL,
+    CONSTRAINT fk_fournisseur_geo__f FOREIGN KEY (id_fournisseur) REFERENCES Fournisseur(id),
+    CONSTRAINT fk_fournisseur_geo__g FOREIGN KEY (id_geo) REFERENCES Region_geo(id)
+);
 
-
-
+CREATE TABLE IF NOT EXISTS Fournisseur_liquide(
+    id_fournisseur integer NOT NULL,
+    id_liquide integer NOT NULL,
+    debit_max integer NOT NULL CHECK (),
+    CONSTRAINT fk_fournisseur_liquid__f FOREIGN KEY (id_fournisseur) REFERENCES Fournisseur(id),
+    CONSTRAINT fk_fournisseur_liquid__l FOREIGN KEY (id_liquide) REFERENCES Liquid(id)
+);
