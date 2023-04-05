@@ -1,0 +1,126 @@
+
+
+INSERT INTO Fournisseur VALUES (1,'cristalline');
+INSERT INTO Fournisseur VALUES (2,'ENGIE');
+INSERT INTO Fournisseur VALUES (3,'Heinekein');
+INSERT INTO Fournisseur VALUES (4,'evian');
+INSERT INTO Fournisseur VALUES (5,'total');
+INSERT INTO Fournisseur VALUES (6,'antargaz');
+INSERT INTO Fournisseur VALUES (7,'butagaz');
+
+
+INSERT INTO Client VALUES (10,'donatello','gisele','fan_do_du14@gmail.com');
+INSERT INTO Client VALUES (66,'Lucifer','Lucius','contract666@hotmail.com');
+INSERT INTO Client VALUES (20,'touggard','mona','mtouggard@gmail.com');
+INSERT INTO Client VALUES (22,'presley','elvis','vegastars@gmail.com');
+INSERT INTO Client VALUES (200,'Jackson','michael','MJMJ@yahoo.com');
+INSERT INTO Client VALUES (77,'Cristal','Line','cristalline_egerie@gmail.com');
+INSERT INTO Client VALUES (13,'LeGris','Gandalph','mageDeLaCompte@gmail.com');
+
+
+INSERT INTO Liquid VALUES (10,true,'badoit');
+INSERT INTO Liquid VALUES (11,true,'cristalline');
+INSERT INTO Liquid VALUES (2,true,'boisson energisante');
+INSERT INTO Liquid VALUES (3,false,'jus de fruit');
+INSERT INTO Liquid VALUES (4,false,'essence');
+INSERT INTO Liquid VALUES (5,false,'cosmétique');
+INSERT INTO Liquid VALUES (6,false,'toxic waste');
+INSERT INTO Liquid VALUES (7,true,'alcool');
+INSERT INTO Liquid VALUES (8,true,'acide');
+
+
+
+INSERT INTO Region_geo VALUES (001,'EUROPE');
+INSERT INTO Region_geo VALUES (456,'ASIE');
+INSERT INTO Region_geo VALUES (666,'AMERIQUE DU NORD');
+INSERT INTO Region_geo VALUES (134,'AFRIQUE');
+INSERT INTO Region_geo VALUES (777,'OCEANIE');
+INSERT INTO Region_geo VALUES (000,'AMERIQUE DU SUD');
+INSERT INTO Region_geo VALUES (011,'ARCTIC/ANTARCTIC');
+
+INSERT INTO Subvention VALUES (1000,'EUROPE');
+INSERT INTO Subvention VALUES (2000,'ASIE');
+INSERT INTO Subvention VALUES (3000,'AMERIQUE DU NORD');
+INSERT INTO Subvention VALUES (4000,'AFRIQUE');
+INSERT INTO Subvention VALUES (5000,'OCEANIE');
+INSERT INTO Subvention VALUES (6000,'AMERIQUE DU SUD');
+INSERT INTO Subvention VALUES (7000,'ARCTIC/ANTARCTIC');
+
+INSERT INTO Pays VALUES (001);
+INSERT INTO Pays VALUES (456);
+INSERT INTO Pays VALUES (666);
+INSERT INTO Pays VALUES (134);
+INSERT INTO Pays VALUES (777);
+INSERT INTO Pays VALUES (000);
+INSERT INTO Pays VALUES (011);
+
+
+INSERT INTO Region VALUES (001);
+INSERT INTO Region VALUES (456);
+INSERT INTO Region VALUES (666);
+INSERT INTO Region VALUES (134);
+INSERT INTO Region VALUES (777);
+INSERT INTO Region VALUES (000);
+INSERT INTO Region VALUES (011);
+
+INSERT INTO Metropole VALUES (001);
+INSERT INTO Metropole VALUES (456);
+INSERT INTO Metropole VALUES (666);
+INSERT INTO Metropole VALUES (134);
+INSERT INTO Metropole VALUES (777);
+INSERT INTO Metropole VALUES (000);
+INSERT INTO Metropole VALUES (011);
+
+INSERT INTO Metropolitaine VALUES (1000,001);
+INSERT INTO Metropolitaine VALUES (2000,456);
+INSERT INTO Metropolitaine VALUES (3000,666);
+INSERT INTO Metropolitaine VALUES (4000,134);
+INSERT INTO Metropolitaine VALUES (5000,777);
+INSERT INTO Metropolitaine VALUES (6000,000);
+INSERT INTO Metropolitaine VALUES (7000,011);
+
+INSERT INTO Commune VALUES (001);
+INSERT INTO Commune VALUES (456);
+INSERT INTO Commune VALUES (666);
+INSERT INTO Commune VALUES (134);
+INSERT INTO Commune VALUES (777);
+INSERT INTO Commune VALUES (000);
+INSERT INTO Commune VALUES (011);
+
+INSERT INTO Communale VALUES (1000,001);
+INSERT INTO Communale VALUES (2000,456);
+INSERT INTO Communale VALUES (3000,666);
+INSERT INTO Communale VALUES (4000,134);
+INSERT INTO Communale VALUES (5000,777);
+INSERT INTO Communale VALUES (6000,000);
+INSERT INTO Communale VALUES (7000,011);
+
+
+
+INSERT INTO Eau VALUES (10,0,0,0,0.1,0.5,0,0,9,10,4);
+INSERT INTO Eau VALUES (11,0,0,0,0.1,0.5,0,0,9,10,4);
+
+
+
+INSERT INTO Sub_valFix VALUES (1000,546547,0.1);
+INSERT INTO Sub_valFix VALUES (2000,2,0.4);
+INSERT INTO Sub_valFix VALUES (3000,5,0.5);
+INSERT INTO Sub_valFix VALUES (4000,4,0.06);
+INSERT INTO Sub_valFix VALUES (5000,10,1);
+INSERT INTO Sub_valFix VALUES (6000,0,0);
+INSERT INTO Sub_valFix VALUES (7000,78,0.7);
+
+
+INSERT INTO Sub_valHab VALUES (1000,546547,0.1);
+INSERT INTO Sub_valHab VALUES (2000,2,0.4);
+INSERT INTO Sub_valHab VALUES (3000,5,0.5);
+INSERT INTO Sub_valHab VALUES (4000,4,0.06);
+INSERT INTO Sub_valHab VALUES (5000,10,1);
+INSERT INTO Sub_valHab VALUES (6000,0,0);
+INSERT INTO Sub_valHab VALUES (7000,78,0.7);
+
+
+
+
+
+
