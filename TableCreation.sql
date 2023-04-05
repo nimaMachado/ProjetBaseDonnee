@@ -170,6 +170,7 @@ CREATE TABLE IF NOT EXISTS Geo_geo(
 CREATE TABLE IF NOT EXISTS Client_liquide(
     id_liquide integer NOT NULL,
     id_client integer NOT NULL,
+    conso float CHECK (conso >= 0),
     CONSTRAINT fk_client_liquide__l FOREIGN KEY (id_liquide) REFERENCES Liquid(id),
     CONSTRAINT fk_client_liquide__c FOREIGN KEY (id_client) REFERENCES Client(id)
 );
@@ -177,6 +178,7 @@ CREATE TABLE IF NOT EXISTS Client_liquide(
 CREATE TABLE IF NOT EXISTS Liquide_geo(
     id_liquide integer NOT NULL,
     id_geo integer NOT NULL,
+    cout_deplacement float CHECK (cout_deplacement >= 0),
     CONSTRAINT fk_liquide_geo__l FOREIGN KEY (id_liquide) REFERENCES Liquid(id),
     CONSTRAINT fk_liquide_geo__g FOREIGN KEY (id_geo) REFERENCES Region_geo(id)
 );
@@ -191,7 +193,7 @@ CREATE TABLE IF NOT EXISTS Fournisseur_geo(
 CREATE TABLE IF NOT EXISTS Fournisseur_liquide(
     id_fournisseur integer NOT NULL,
     id_liquide integer NOT NULL,
-    debit_max integer NOT NULL CHECK (),
+    debit_max float NOT NULL CHECK (debit_max >= 0),
     CONSTRAINT fk_fournisseur_liquid__f FOREIGN KEY (id_fournisseur) REFERENCES Fournisseur(id),
     CONSTRAINT fk_fournisseur_liquid__l FOREIGN KEY (id_liquide) REFERENCES Liquid(id)
 );
